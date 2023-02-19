@@ -1,6 +1,12 @@
 function Holdings() {
     return (
-        <div></div>
+        <div>
+            <table>
+                <tr>
+                    
+                </tr>
+            </table>
+        </div>
     )
 }
 export default Holdings
