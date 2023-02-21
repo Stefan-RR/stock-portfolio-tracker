@@ -3,6 +3,7 @@ function Stock({ stockName, quantity }) {
         <div>
             <input type='text' onChange={stockName}></input>
             <input type='number' onChange={quantity}></input>
+            <button>Add</button>
         </div>
     )
 }
