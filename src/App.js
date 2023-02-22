@@ -15,10 +15,15 @@ function App() {
     fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=9FYPSKB2VPFSVLU5`)
     .then(res =>res.json())
       .then(data => {
-        console.log(data)
+        setNewPrice(data.price)
+        console.log(newPrice)
       })
     }
   }, [symbol])
+
+  function appendStock() {
+
+  }
 
   return (
     <div className="App">
