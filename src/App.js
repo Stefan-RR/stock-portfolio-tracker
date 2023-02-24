@@ -12,11 +12,10 @@ function App() {
 
   useEffect(() =>{
     if (setSymbol !=null) {
-    fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=9FYPSKB2VPFSVLU5`)
+    fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/2023-01-09/2023-01-09?apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
     .then(res =>res.json())
       .then(data => {
-        setNewPrice(data.price)
-        console.log(newPrice)
+        console.log(data)
       })
     }
   }, [symbol])
