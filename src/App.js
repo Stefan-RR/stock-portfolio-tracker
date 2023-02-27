@@ -9,20 +9,23 @@ function App() {
   const [symbol, setSymbol] = useState();
   const [shares, setShares]  = useState();
   const [newPrice, setNewPrice] = useState();
-  const [amount, setAmount] = useState();
+  const [stockList, setStockList] = useState([]);
 
   useEffect(() =>{
     if (setSymbol !=null) {
     fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/2023-02-24/2023-02-24?apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
     .then(res =>res.json())
       .then(data => {
-        console.log(data.results[0].c)
         setNewPrice(data.results[0].c)
       })
     }
   }, [symbol])
 
+  const amount= () => {
+    return newPrice * shares
 
+  }
+  console.log(newPrice * shares)
 
   return (
     <div className="App">
@@ -35,7 +38,7 @@ function App() {
           quantity={e => setShares(e.target.value)}
         />
         <Holdings
-          stocks = {amount}
+          stocks={stockList}
          />
       </span>
     </div>
