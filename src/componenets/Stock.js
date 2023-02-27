@@ -1,6 +1,6 @@
 function Stock({ stockName, quantity, addStock }) {
     return (
-        <form>
+        <form className="form">
             <label>Stock Name</label>
             <input type='text' onChange={stockName}></input>
             <label>Number of Shares</label>
