@@ -41,6 +41,8 @@ html {
 }
 .form button {
     width: 15%;
+    background-color: white;
+    color: black;
 }
 .holdingsTable {
     width: 80%;
