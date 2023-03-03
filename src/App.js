@@ -21,10 +21,7 @@ function App() {
     }
   }, [symbol])
 
-  const amount= () => {
-    return newPrice * shares
-
-  }
+  
   console.log(newPrice * shares)
 
   return (
@@ -36,6 +33,7 @@ function App() {
         <Stock
           stockName={e => setSymbol(e.target.value)}
           quantity={e => setShares(e.target.value)}
+          addStock={e => setStockList(stockList => [...stockList, symbol])}
         />
         <Holdings
           stocks={stockList}
