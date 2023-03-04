@@ -20,10 +20,16 @@ function App() {
       })
     }
   }, [symbol])
-
   
-  console.log(newPrice * shares)
 
+  function holding(symbol, shares) {
+    const holding = {
+      symbol: symbol,
+      shares: shares
+    };
+    setStockList([...stockList, holding]);
+  }
+  
   return (
     <div className="App">
       <span className='top'>
@@ -33,10 +39,12 @@ function App() {
         <Stock
           stockName={e => setSymbol(e.target.value)}
           quantity={e => setShares(e.target.value)}
-          addStock={e => setStockList(stockList => [...stockList, symbol])}
+          addStock={e => holding}
         />
         <Holdings
-          stocks={stockList}
+          {...stockList.map(holding => {
+            <tr id={holding.name} >{holding}</tr>
+          })}
          />
       </span>
     </div>
