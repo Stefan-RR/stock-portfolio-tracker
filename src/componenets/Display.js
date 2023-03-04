@@ -1,6 +1,8 @@
-function Display() {
+function Display({ total }) {
     return (
-        <div></div>
+        <div className="display">
+            <p>${total}</p>
+        </div>
     )
 }
 
