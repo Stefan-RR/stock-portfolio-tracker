@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() =>{
     if (setSymbol !=null) {
-    fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/2023-02-24/2023-02-24?apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
+    fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/2023-03-2/2023-03-2?apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
     .then(res =>res.json())
       .then(data => {
         setNewPrice(data.results[0].c)
@@ -22,12 +22,12 @@ function App() {
   }, [symbol])
   
 
-  function holding(symbol, shares) {
+  const handleAddHolding = (text) => {
     const holding = {
-      symbol: symbol,
-      shares: shares
+      text
     };
     setStockList([...stockList, holding]);
+    console.log(stockList)
   }
   
   return (
@@ -39,11 +39,11 @@ function App() {
         <Stock
           stockName={e => setSymbol(e.target.value)}
           quantity={e => setShares(e.target.value)}
-          addStock={e => holding}
+          addStock={handleAddHolding}
         />
         <Holdings
           {...stockList.map(holding => {
-            <tr id={holding.name} >{holding}</tr>
+            <tr><td>{holding}</td></tr>
           })}
          />
       </span>
