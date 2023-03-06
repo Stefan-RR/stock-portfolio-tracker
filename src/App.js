@@ -22,9 +22,10 @@ function App() {
   }, [symbol])
   
 
-  const handleAddHolding = (text) => {
+  const handleAddHolding = (stockName, quantity) => {
     const holding = {
-      text
+      id: stockName,
+      value: quantity
     };
     setStockList([...stockList, holding]);
     console.log(stockList)
