@@ -3,12 +3,14 @@ function Holdings({ stocks }) {
         <div className="holdingsTable">
             <table>
                 <thead>
-                    <th>Symbol</th>
-                    <th>Shares</th>
-                    <th>Value</th>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Shares</th>
+                        <th>Value</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    
+                    {stocks}
                 </tbody>
             </table>
         </div>
