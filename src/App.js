@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() =>{
     if (setSymbol !=null) {
-    fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/range/1/day/2023-03-2/2023-03-2?apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
+    fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/prev?adjusted=true&apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
     .then(res =>res.json())
       .then(data => {
         setNewPrice(data.results[0].c)
@@ -42,11 +42,25 @@ function App() {
           quantity={e => setShares(e.target.value)}
           addStock={handleAddHolding}
         />
-        <Holdings
-          {...stockList.map(holding => {
-            <tr><td>{holding}</td></tr>
-          })}
-         />
+        <div className="holdingsTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Shares</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {stockList.map(holding => {
+                  return <tr key={holding.id}>
+                            <td>{holding.id}</td>
+                            <td>{holding.value}</td>
+                         </tr>
+                    })}
+                </tbody>
+            </table>
+        </div> 
       </span>
     </div>
   );
