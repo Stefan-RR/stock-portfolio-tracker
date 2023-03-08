@@ -17,6 +17,7 @@ function App() {
     .then(res =>res.json())
       .then(data => {
         setNewPrice(data.results[0].c)
+        console.log(newPrice)
       })
     }
   }, [symbol])
@@ -47,6 +48,7 @@ function App() {
                 <thead>
                     <tr>
                         <th>Symbol</th>
+                        <th>Price</th>
                         <th>Shares</th>
                         <th>Value</th>
                     </tr>
@@ -55,7 +57,9 @@ function App() {
                 {stockList.map(holding => {
                   return <tr key={holding.id}>
                             <td>{holding.id}</td>
+                            <td>price</td>
                             <td>{holding.value}</td>
+                            <td>value</td>
                          </tr>
                     })}
                 </tbody>
