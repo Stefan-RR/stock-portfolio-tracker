@@ -56,4 +56,5 @@ html {
 }
 .holdingsTable table {
     width: 80%;
+    text-align: left;
 }
