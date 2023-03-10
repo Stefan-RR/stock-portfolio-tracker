@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Display from './componenets/Display';
 import Stock from './componenets/Stock'
-import Holdings from './componenets/Holdings'
 
 function App() {
 
@@ -57,7 +56,7 @@ function App() {
                 {stockList.map(holding => {
                   return <tr key={holding.id}>
                             <td>{holding.id}</td>
-                            <td>price</td>
+                            <td>{newPrice}</td>
                             <td>{holding.value}</td>
                             <td>value</td>
                          </tr>
