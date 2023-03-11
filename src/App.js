@@ -12,11 +12,11 @@ function App() {
 
   useEffect(() =>{
     if (setSymbol !=null) {
-    fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol}/prev?adjusted=true&apiKey=Mrkl_Lab0ixmEeqXbeqBJiDxibsH8VUZ`)
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
     .then(res =>res.json())
       .then(data => {
-        setNewPrice(data.results[0].c)
-        console.log(newPrice)
+        setNewPrice(data)
+        console.log(data.pc)
       })
     }
   }, [symbol])
@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <span className='top'>
-        <Display />
+        <Display/>
       </span>
       <span className='bottom'>
         <Stock
@@ -56,7 +56,7 @@ function App() {
                 {stockList.map(holding => {
                   return <tr key={holding.id}>
                             <td>{holding.id}</td>
-                            <td>{newPrice}</td>
+                            <td></td>
                             <td>{holding.value}</td>
                             <td>value</td>
                          </tr>
