@@ -15,8 +15,7 @@ function App() {
     fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
     .then(res =>res.json())
       .then(data => {
-        setNewPrice(data)
-        console.log(data.pc)
+        console.log(data)
       })
     }
   }, [symbol])
@@ -28,7 +27,6 @@ function App() {
       value: quantity
     };
     setStockList([...stockList, holding]);
-    console.log(stockList)
   }
   
   return (
