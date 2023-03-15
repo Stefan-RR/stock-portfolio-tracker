@@ -13,7 +13,15 @@ function App() {
   const handleAddHolding = (stockName, quantity) => {
     const holding = {
       id: stockName,
-      value: quantity
+      value: quantity,
+      price: 
+        fetch(`https://finnhub.io/api/v1/quote?symbol=${stockName}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
+        .then(res =>res.json())
+          .then(data => {
+            console.log(data.c)
+            return data.c
+          })
+        
     };
     setStockList([...stockList, holding]);
   }
@@ -41,7 +49,6 @@ function App() {
                 </thead>
                 <tbody>
                 {stockList.map(holding => {
-                  
                     {
                     fetch(`https://finnhub.io/api/v1/quote?symbol=${holding.id}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
                     .then(res =>res.json())
