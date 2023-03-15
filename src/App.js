@@ -10,22 +10,27 @@ function App() {
   const [newPrice, setNewPrice] = useState();
   const [stockList, setStockList] = useState([]);
   
-  const handleAddHolding = (stockName, quantity) => {
+  const handleAddHolding = (stockName, quantity, newPrice) => {
     const holding = {
       id: stockName,
       value: quantity,
-      price: 
-        fetch(`https://finnhub.io/api/v1/quote?symbol=${stockName}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
-        .then(res =>res.json())
-          .then(data => {
-            console.log(data.c)
-            return data.c
-          })
-        
+      price: newPrice
     };
     setStockList([...stockList, holding]);
   }
   
+  useEffect(() =>{
+    if (setSymbol !=null) {
+
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
+        .then(res =>res.json())
+          .then(data => {
+            console.log(data)
+            setNewPrice(data.c)
+          }) 
+        }
+        })
+
   return (
     <div className="App">
       <span className='top'>
@@ -49,18 +54,10 @@ function App() {
                 </thead>
                 <tbody>
                 {stockList.map(holding => {
-                    {
-                    fetch(`https://finnhub.io/api/v1/quote?symbol=${holding.id}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
-                    .then(res =>res.json())
-                      .then(data => {
-                        console.log(data.c)
-                        setNewPrice(data.c)
-                      })
-                    }
-                 
+                  
                   return <tr key={holding.id}>
                             <td>{holding.id}</td>
-                            <td>{newPrice}</td>
+                            <td>{holding.price}</td>
                             <td>{holding.value}</td>
                             <td>value</td>
                          </tr>
