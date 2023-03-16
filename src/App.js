@@ -19,17 +19,7 @@ function App() {
     setStockList([...stockList, holding]);
   }
   
-  useEffect(() =>{
-    if (setSymbol !=null) {
-
-    fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
-        .then(res =>res.json())
-          .then(data => {
-            console.log(data)
-            setNewPrice(data.c)
-          }) 
-        }
-        })
+  
 
   return (
     <div className="App">
