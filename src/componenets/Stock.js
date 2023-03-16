@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 function Stock({ addStock }) {
     const [stockName, setStockName] = useState("")
@@ -13,7 +13,7 @@ function Stock({ addStock }) {
         fetch(`https://finnhub.io/api/v1/quote?symbol=${stockName}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
                 .then(res =>res.json())
                   .then(data => {
-                    console.log(data)
+                    console.log(data.c)
                     console.log(stockName)
                   }) 
                 
