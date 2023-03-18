@@ -3,13 +3,13 @@ import { useState } from "react"
 function Stock({ addStock }) {
     const [stockName, setStockName] = useState("")
     const [quantity, setQuantity] = useState("")
+    const [price, setPrice] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
         addStock(stockName, quantity)
     }
     const handleName = (e) => {
-       
         fetch(`https://finnhub.io/api/v1/quote?symbol=${stockName}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
                 .then(res =>res.json())
                   .then(data => {
