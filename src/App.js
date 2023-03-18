@@ -7,14 +7,13 @@ function App() {
 
   const [symbol, setSymbol] = useState();
   const [shares, setShares]  = useState();
-  const [newPrice, setNewPrice] = useState();
   const [stockList, setStockList] = useState([]);
   
   const handleAddHolding = (stockName, quantity, newPrice) => {
     const holding = {
       id: stockName,
       value: quantity,
-      price: newPrice
+      name: newPrice
     };
     setStockList([...stockList, holding]);
   }
