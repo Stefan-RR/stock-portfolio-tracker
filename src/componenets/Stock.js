@@ -30,7 +30,7 @@ function Stock({ addStock }) {
             <label>Number of Shares</label>
             <input type='number' value={quantity} onChange={(e) => setQuantity(e.target.value)}></input>
             <label>Stock Price</label>
-            <input type='number' value={newPrice}></input>
+            <input type='number' value={newPrice} onChange={(e) => setNewPrice(e.target.value)}></input>
             <button type='submit'>Add</button>
         </form>
     )
