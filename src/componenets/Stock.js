@@ -3,7 +3,7 @@ import { useState } from "react"
 function Stock({ addStock }) {
     const [stockName, setStockName] = useState("")
     const [quantity, setQuantity] = useState("")
-    const [price, setPrice] = useState("")
+    const [newPrice, setNewPrice] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -13,12 +13,16 @@ function Stock({ addStock }) {
         fetch(`https://finnhub.io/api/v1/quote?symbol=${stockName}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
                 .then(res =>res.json())
                   .then(data => {
-                    console.log(data.c)
+                    setNewPrice(data.c)
                     console.log(stockName)
                   }) 
     }
-
-
+    const checkPrice = () => {
+        if (stockName !=null) {
+            console.log(newPrice)
+        }
+    }
+    checkPrice()
     return (
         <form onSubmit={handleSubmit} className="form">
             <label>Stock Name</label>
