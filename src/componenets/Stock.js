@@ -29,6 +29,8 @@ function Stock({ addStock }) {
             <input type='text' value={stockName} onChange={(e) => setStockName(e.target.value)} onBlur={handleName}></input>
             <label>Number of Shares</label>
             <input type='number' value={quantity} onChange={(e) => setQuantity(e.target.value)}></input>
+            <label>Stock Price</label>
+            <input type='number' value={newPrice}></input>
             <button type='submit'>Add</button>
         </form>
     )
