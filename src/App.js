@@ -14,9 +14,10 @@ function App() {
     const holding = {
       id: stockName,
       value: quantity,
-      name: newPrice
+      price: newPrice
     };
     setStockList([...stockList, holding]);
+    console.log(stockList)
   }
   
   
@@ -48,7 +49,7 @@ function App() {
                   
                   return <tr key={holding.id}>
                             <td>{holding.id}</td>
-                            <td>{holding.name}</td>
+                            <td>{holding.price}</td>
                             <td>{holding.value}</td>
                             <td>value</td>
                          </tr>

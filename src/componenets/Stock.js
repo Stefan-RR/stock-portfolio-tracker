@@ -7,7 +7,7 @@ function Stock({ addStock }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addStock(stockName, quantity)
+        addStock(stockName, quantity, newPrice)
     }
     const handleName = (e) => {
         fetch(`https://finnhub.io/api/v1/quote?symbol=${stockName}&token=cfpsonhr01qmi6j4b280cfpsonhr01qmi6j4b28g`)
