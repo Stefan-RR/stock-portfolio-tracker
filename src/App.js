@@ -50,9 +50,9 @@ function App() {
                   
                   return <tr key={holding.id}>
                             <td>{holding.id}</td>
-                            <td>{holding.price}</td>
+                            <td>${holding.price.toFixed(2)}</td>
                             <td>{holding.value}</td>
-                            <td>{holding.amount}</td>
+                            <td>${holding.amount.toFixed(2)}</td>
                          </tr>
                     })}
                 </tbody>
