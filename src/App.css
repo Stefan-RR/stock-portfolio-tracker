@@ -57,4 +57,9 @@ html {
 .holdingsTable table {
     width: 80%;
     text-align: left;
+    border-collapse: collapse;
+}
+.holdingsTable table tbody tr {
+    border-bottom: 1px solid black;
+
 }
