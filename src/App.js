@@ -32,7 +32,7 @@ function App() {
         <Stock
           stockName={e => setSymbol(e.target.value)}
           quantity={e => setShares(e.target.value)}
-          newPrice={e => setPrice(e.target.value)}
+          newPrice={e => setPrice(e.target.value).toFixed(2)}
           addStock={handleAddHolding}
         />
         <div className="holdingsTable">
