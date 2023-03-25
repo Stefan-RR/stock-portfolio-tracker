@@ -30,14 +30,14 @@ html {
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 20%;
+    height: auto;
     margin-top: 2%;
     margin-left: 2%;
     padding: 1%;
     border-radius: 20px;
     color: white;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     background: rgb(42,22,50);
     background: linear-gradient(58deg, rgba(42,22,50,1) 0%, rgba(109,138,201,1) 100%);
 }
