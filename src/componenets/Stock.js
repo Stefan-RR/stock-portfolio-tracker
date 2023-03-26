@@ -5,6 +5,10 @@ function Stock({ addStock }) {
     const [quantity, setQuantity] = useState("")
     const [newPrice, setNewPrice] = useState("")
 
+    const toInputUppercase = e => {
+        e.target.value = ("" + e.target.value).toUpperCase();
+      };
+
     const handleSubmit = (e) => {
         e.preventDefault()
         addStock(stockName, quantity, newPrice)
@@ -29,7 +33,7 @@ function Stock({ addStock }) {
     return (
         <form onSubmit={handleSubmit} className="form">
             <label>Stock Name</label>
-            <input type='text' value={stockName} onChange={(e) => setStockName(e.target.value)} onBlur={handleName}></input>
+            <input type='text' value={stockName} onChange={(e) => setStockName(e.target.value)} onBlur={handleName} onInput={toInputUppercase}></input>
             <label>Number of Shares</label>
             <input type='number' value={quantity} onChange={(e) => setQuantity(e.target.value)}></input>
             <label>Stock Price</label>
