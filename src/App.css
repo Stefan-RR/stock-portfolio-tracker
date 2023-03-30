@@ -18,6 +18,9 @@ html {
 }
 .display {
     color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 .bottom {
     display: flex;
