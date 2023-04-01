@@ -49,7 +49,7 @@ function App() {
                 {stockList.map(holding => {
                   
                   return <tr key={holding.id}>
-                            <td><span className='ticker'>{holding.id}</span><span className='info'>${holding.price.toFixed(2)}|{holding.value}</span></td>
+                            <td className='stock-row'><span className='ticker'>{holding.id}</span><span className='info'>{holding.value} | ${holding.price.toFixed(2)}</span></td>
                             
                             <td className='val'>${holding.amount.toFixed(2)}</td>
                          </tr>
