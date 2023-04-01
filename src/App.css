@@ -76,3 +76,14 @@ html {
     border-bottom: 1px solid black;
 
 }
+.stock-row {
+    display: flex;
+    flex-direction: column;
+}
+.info {
+    font-size: 20px;
+    padding: 2px;
+}
+.val {
+    text-align: right;
+}
