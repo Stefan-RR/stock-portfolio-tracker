@@ -26,7 +26,10 @@ function App() {
   return (
     <div className="App">
       <span className='top'>
-        <Display/>
+    
+        <Display
+          
+        />
       </span>
       <span className='bottom'>
         <Stock
@@ -39,20 +42,16 @@ function App() {
             <table>
                 <thead>
                     <tr>
-                        <th>Symbol</th>
-                        <th>Price</th>
-                        <th>Shares</th>
-                        <th>Value</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                 {stockList.map(holding => {
                   
                   return <tr key={holding.id}>
-                            <td>{holding.id}</td>
-                            <td>${holding.price.toFixed(2)}</td>
-                            <td>{holding.value}</td>
-                            <td>${holding.amount.toFixed(2)}</td>
+                            <td><span className='ticker'>{holding.id}</span><span className='info'>${holding.price.toFixed(2)}|{holding.value}</span></td>
+                            
+                            <td className='val'>${holding.amount.toFixed(2)}</td>
                          </tr>
                     })}
                 </tbody>
