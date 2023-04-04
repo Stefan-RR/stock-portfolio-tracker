@@ -37,7 +37,8 @@ function App() {
             <table>
                 <thead>
                     <tr>
-                        
+                       <td>Stock</td> 
+                       <td class="right">Value</td>
                     </tr>
                 </thead>
                 <tbody>
