@@ -18,17 +18,12 @@ function App() {
       amount: quantity * newPrice
     };
     setStockList([...stockList, holding]);
-    console.log(stockList)
   }
-  
-  
 
   return (
     <div className="App">
       <span className='top'>
-    
         <Display
-          
         />
       </span>
       <span className='bottom'>
