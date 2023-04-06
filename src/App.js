@@ -23,13 +23,17 @@ function App() {
       amount: quantity * newPrice
     }
     setValues([...values, v]);
-    console.log(values)
+    
   }
+
+  const sums = values.reduce((prev, next) => prev + next.amount, 0)
+  console.log(sums)
 
   return (
     <div className="App">
       <span className='top'>
         <Display
+          total={sums.toFixed(2)}
         />
       </span>
       <span className='bottom'>
