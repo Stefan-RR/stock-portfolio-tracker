@@ -9,6 +9,7 @@ function App() {
   const [shares, setShares]  = useState();
   const [price, setPrice]  = useState();
   const [stockList, setStockList] = useState([]);
+  const [values, setValues] = useState([]);
   
   const handleAddHolding = (stockName, quantity, newPrice) => {
     const holding = {
@@ -18,6 +19,11 @@ function App() {
       amount: quantity * newPrice
     };
     setStockList([...stockList, holding]);
+    const v = {
+      amount: quantity * newPrice
+    }
+    setValues([...values, v]);
+    console.log(values)
   }
 
   return (
@@ -43,10 +49,8 @@ function App() {
                 </thead>
                 <tbody>
                 {stockList.map(holding => {
-                  
                   return <tr key={holding.id}>
                             <td className='stock-row'><span className='ticker'>{holding.id}</span><span className='info'>{holding.value} | ${holding.price.toFixed(2)}</span></td>
-                            
                             <td className='val'>${holding.amount.toFixed(2)}</td>
                          </tr>
                     })}
