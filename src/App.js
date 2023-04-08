@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <span className='top'>
         <Display
-          total={sums.toFixed(2)}
+          total={sums.toLocaleString(undefined, {'minimumFractionDigits':2,'maximumFractionDigits':2})}
         />
       </span>
       <span className='bottom'>
@@ -55,7 +55,7 @@ function App() {
                 {stockList.map(holding => {
                   return <tr key={holding.id}>
                             <td className='stock-row'><span className='ticker'>{holding.id}</span><span className='info'>{holding.value} | ${holding.price.toFixed(2)}</span></td>
-                            <td className='val'>${holding.amount.toFixed(2)}</td>
+                            <td className='val'>${holding.amount.toLocaleString(undefined, {'minimumFractionDigits':2,'maximumFractionDigits':2})}</td>
                          </tr>
                     })}
                 </tbody>
