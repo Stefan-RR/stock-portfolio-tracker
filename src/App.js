@@ -23,11 +23,9 @@ function App() {
       amount: quantity * newPrice
     }
     setValues([...values, v]);
-    
   }
 
   const sums = values.reduce((prev, next) => prev + next.amount, 0)
-  console.log(sums)
 
   return (
     <div className="App">
