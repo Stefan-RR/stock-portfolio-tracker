@@ -11,8 +11,6 @@ html {
 }
 .top {
     display: flex;
-    align-items: left;
-    padding-left: 10%;
     font-size: 80px;
     width: 100%;
     height: 30vh;
@@ -21,26 +19,33 @@ html {
     color: white;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 80%;
 }
 .bottom {
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 70vh;
     background-color: rgb(255, 255, 255);
     border-radius: 20px 20px 0 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 .right {
     text-align: right;
 }
+.add {
+    font-size: 50px;
+    display:block
+}
 .form {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: auto;
     height: auto;
     margin-top: 2%;
     margin-bottom: auto;
     margin-left: 2%;
+    margin-right: 2%;
     padding: 1%;
     border-radius: 20px;
     color: white;
@@ -62,13 +67,14 @@ html {
     border-style: none;
 }
 .holdingsTable {
-    width: 60%;
+    width: 80%;
     padding-top: 2%;
     padding-left: 2%;
+    padding-right: 2%;
     font-size: 25px;
 }
 .holdingsTable table {
-    width: 80%;
+    width: 100%;
     text-align: left;
     border-collapse: collapse;
 }
