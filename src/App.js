@@ -12,6 +12,7 @@ function App() {
   const [values, setValues] = useState([]);
   
   const handleAddHolding = (stockName, quantity, newPrice) => {
+
     const holding = {
       id: stockName,
       value: quantity,
@@ -35,12 +36,6 @@ function App() {
         />
       </span>
       <span className='bottom'>
-        <Stock
-          stockName={e => setSymbol(e.target.value)}
-          quantity={e => setShares(e.target.value)}
-          newPrice={e => setPrice(e.target.value).toFixed(2)}
-          addStock={handleAddHolding}
-        />
         <div className="holdingsTable">
             <table>
                 <thead>
@@ -59,6 +54,13 @@ function App() {
                 </tbody>
             </table>
         </div> 
+        <p className='add'>+</p>
+        <Stock
+          stockName={e => setSymbol(e.target.value)}
+          quantity={e => setShares(e.target.value)}
+          newPrice={e => setPrice(e.target.value).toFixed(2)}
+          addStock={handleAddHolding}
+        />
       </span>
     </div>
   );
