@@ -34,8 +34,12 @@ html {
     text-align: right;
 }
 .add {
-    font-size: 50px;
+    font-size: 75px;
     display:block
+}
+.add:hover {
+    color: rgb(161, 153, 153);
+    cursor: pointer;
 }
 .form {
     display: none;
